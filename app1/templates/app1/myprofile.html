@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<br>
+<div class='container mt-5'>
+  <div class='col-6 mx-auto border border-info p-2'>
+
+<h1 class='alert alert-info text-center'>My  Profile</h1>
+
+
+<a href="/UpdateUser/" class="btn btn-primary">Edit</a><br><hr>
+
+<h2>USERNAME: {{ i.username }} </h2><br>
+<h2>FIRST NAME: {{ i.first_name }} </h2><br>
+<h2>LAST NAME: {{ i.last_name }} </h2><br>
+<h2>EMAIL: {{ i.email }} </h2><br>
+
+</div>
+</div>
+
+
+{% endblock %}

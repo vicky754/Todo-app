@@ -1,0 +1,26 @@
+/*font css*/
+.st-font{
+	font-family: 'Merriweather', serif;
+}
+.ft{
+	font-family: 'Comic Neue', cursive;
+}
+.f1{
+	font-family: 'Fredoka One', cursive;
+	font-size: '35px';
+}
+.nav-link{
+	font-family: 'Righteous', cursive;
+}
+
+
+.ft-color{
+ color:#BD5D38;
+}
+html,body{
+	height:100%;
+}
+
+.container-fluid {
+	min-height: 100%;
+}

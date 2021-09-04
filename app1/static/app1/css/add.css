@@ -1,0 +1,23 @@
+body{
+	border:20px solid grey;
+	margin:20px;
+	padding:20px;
+}
+h1{
+	color:blue;
+	font-family: 'Staatliches', cursive;
+	
+}
+
+h2{
+	text-align: center;
+	
+}
+p{
+	border-left:5px solid grey;
+	padding-left:5px;
+	text-highlight:blue;
+	font-family: 'Staatliches', cursive;
+	font-family: 'ZCOOL XiaoWei', serif;
+
+}

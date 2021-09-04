@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<br><br>
+<div class='container mt-5'>
+	<div class='col-10 mx-auto border border-success p-2 border-round'>
+
+<h1 class='alert alert-info mx-auto text-center'>Today's ToDo List</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Sr No.</th>
+      <th scope="col">Date</th>
+      
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">TO-DO-DONE</th>
+      <th scope="col">STATUS</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in x %}
+    <tr>
+      <td>{{forloop.counter}}.</td>
+      <td>{{i.date}}</td>
+      <td>{{i.title}}</td>
+      <td>{{i.discription}}</td>
+      
+      {% if i.done == True %}
+       <td><small class='badge bg-success'>Completed</small></td>
+       {% else %}
+        <td><small class='badge bg-danger'>Incomplete</small></td>
+        {% endif %}
+        {% if i.done == True %}
+        <td> </td>
+        {% else %}
+        <td>
+         <a href='/change-status/{{i.id}}/True/' title='mark done' class="btn btn-primary">Done</a>
+        </td>
+        {% endif %}
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+{% endblock %}
