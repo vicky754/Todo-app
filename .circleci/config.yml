@@ -2,17 +2,28 @@ version: 2.1
 
 
 jobs:
-  build:
+  build-and-push:
     docker:
-      - image: circleci/python:3.12  # adjust Python version as needed
+      - image: cimg/base:stable  # lightweight image with Docker CLI
     working_directory: ~/repo
 
     steps:
       - checkout
-      - setup_remote_docker
+
+      - setup_remote_docker  # Required for Docker builds on CircleCI
+
       - run:
-          name: Docker login
+          name: Log in to Docker Hub
           command: echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
+
+      - run:
+          name: Build Docker image
+          command: docker build -t $DOCKERHUB_USERNAME/myapp:latest .
+
+      - run:
+          name: Push image to Docker Hub
+          command: docker push $DOCKERHUB_USERNAME/myapp:latest
+
 
       - run:
           name: Set up virtual environment
