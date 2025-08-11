@@ -7,6 +7,7 @@ from django.views.generic import *
 from app1.forms import EditProfileForm
 
 
+
 import datetime
 my_date = datetime.date.today() 
 p_year, p_week, day_of_week = my_date.isocalendar()
